@@ -24,6 +24,10 @@ This runs in a container so that it can only modify files I mount to it, and onl
 
 Ethical concerns about plagiarism is a common issue people have with how LLMs are trained. By providing the opportunity to do local inference, I'm able to explore the massive ecosystem of models available on HuggingFace and elsewhere, many of which have been trained on a more carefully curated set of data to avoid these concerns.
 
+### Do less, better
+
+Avoid maximalism and accelerationism vibes. All code output is still authored by a human who is vouching for its efficacy and understands it before merging it. This is a tool to help rubber-duck, clear roadblocks and aid executive function by facilitating a bias to action. This is not a tool for [inactive gods](https://en.wikipedia.org/wiki/Deus_otiosus) wishing to set a course and walk away. Thus, the output should always be efficient, maintainable, simple code authored for other humans, and the prompts should be optimized for both token efficiency and concise, correct results without agents wasting turns doing the wrong thing.
+
 ## Plans
 
 I should probably put these in Github issues.
@@ -32,7 +36,12 @@ Goals are **not** about making agents DO MORE, more about ensuring agents are et
 
 - an extension to integrate with [ACE](https://github.com/kayba-ai/agentic-context-engine) so that agents can perform self-learning while they work
 - experimentation with agent memory tools like [Beads](https://github.com/steveyegge/beads)
-- better agent search tooling with [qmd](https://github.com/tobi/qmd), Elasticsearch, etc
+- better agent search tooling with [qmd](https://github.com/tobi/qmd), [frankensearch](https://github.com/Dicklesworthstone/frankensearch), Elasticsearch, etc
 - use [LLM Compressor](https://github.com/vllm-project/llm-compressor) to improve the speed and energy usage of local inference
 - use [tokenshrink](https://github.com/chatde/tokenshrink) to reduce token usage, also to improve speed and energy usage
 - experimentation with [nono](https://docs.nono.sh) for zero-trust: more security, an audit chain of provenance, atomic rollback, etc.
+- use [jjq](https://pauladamsmith.com/blog/2026/02/introducing--local-merge-queue-for--local-merge-queue-for-) to makntain a local merge queue powered by Jujutsu, which Inalready use as a Git substitute CLI
+- use [gskill](https://gepa-ai.github.io/gepa/blog/2026/02/18/automatically-learning-skills-for-coding-agents/)
+and optimize_anything for prompt and skill optimization
+- build workflows and pipelines with [omp-swarm](https://github.com/can1357/oh-my-pi/tree/main/packages/swarm-extension)
+- track task token usage efficiency with [omp stats](https://github.com/can1357/oh-my-pi/tree/main/packages/stats) to establish the most efficient strategies
