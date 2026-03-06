@@ -1,3 +1,2 @@
-*.db
-omp/agent/sessions/*
-.db-shm
+node_modules
+package-lock.json

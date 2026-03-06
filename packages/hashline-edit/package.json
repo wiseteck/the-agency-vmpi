@@ -1,0 +1,18 @@
+{
+  "name": "pi-hashline-edit",
+  "version": "0.1.0",
+  "description": "Pi extension providing hashline-based file reading and editing with staleness-checked line addressing.",
+  "type": "module",
+  "main": "index.ts",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-ai": "*",
+    "@sinclair/typebox": "*"
+  },
+  "license": "MIT"
+}

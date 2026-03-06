@@ -1,0 +1,11 @@
+{
+  "name": "the-agency",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/JoshMock/the-agency/issues"
+  },
+  "homepage": "https://github.com/JoshMock/the-agency#readme",
+  "workspaces": [
+    "packages/*"
+  ]
+}

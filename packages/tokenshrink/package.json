@@ -1,0 +1,19 @@
+{
+  "name": "pi-tokenshrink",
+  "version": "0.1.0",
+  "description": "Reduce token usage of a Pi agent's conversation context using TokenShrink.",
+  "type": "module",
+  "main": "index.ts",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*"
+  },
+  "dependencies": {
+    "tokenshrink": "^2.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,47 +1,17 @@
-This is my coding agent harness. There are many like it, but this one is mine.
-
-Runs [oh-my-pi](https://github.com/can1357/oh-my-pi), a sane (as in, not OpenClaw) but batteries-included fork of the [Pi coding agent](https://github.com/badlogic/pi-mono), in a container.
-
-## Usage
-
-Requires [just](https://just.systems/) and [podman-compose](https://github.com/containers/podman-compose). Then run `just start` to turn it on, or `just restart` to turn it off and back on again.
+A collection of extensions, skills, tools and experiments with the [Pi coding agent](https://www.npmjs.com/package/@mariozechner/pi-coding-agent).
 
 ## Goals
 
 ### Local inference
 
-Privacy, self-sufficiency and energy conservation are personal values of mine, so this should be capable of running without access to any cloud services.
+**Privacy**, **self-sufficiency**, **ethics** and **energy conservation** are personal values of mine, so there will be an emphasis on local and low-energy inference sources (e.g. [vLLM](https://docs.vllm.ai/) using local GPUs or CPUs).
 
-[vLLM](https://docs.vllm.ai) runs when I'm on a laptop that has an Nvidia GPU with [Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/) installed, so that inference can be done locally. This is still very experimental, so it is still able to connect to popular coding inference services.
-
-[docs-mcp-server](https://github.com/arabold/docs-mcp-server) is also running, and keeps a local cache of machine-readable documentation for several libraries and tools I use often.
+Local inference also enables experimentation with open models that have been trained on more carefully curated sets of data.
 
 ### Security
 
-This runs in a container so that it can only modify files I mount to it, and only run executables that I've explicitly installed. It also uses [pi-guardrails](https://www.npmjs.com/package/@aliou/pi-guardrails) to gate its ability to run bash commands without my permission.
-
-### Ethics
-
-Ethical concerns about plagiarism is a common issue people have with how LLMs are trained. By providing the opportunity to do local inference, I'm able to explore the massive ecosystem of models available on HuggingFace and elsewhere, many of which have been trained on a more carefully curated set of data to avoid these concerns.
+Tools and experiments will ideally build on the use of containers or other tools (e.g. [nono](https://nono.sh/)) that limit the blast radius of an agent. [pi-guardrails](https://www.npmjs.com/package/@aliou/pi-guardrails) is a great start, but there are many ways to work around it.
 
 ### Do less, better
 
-Avoid maximalism and accelerationism vibes. All code output is still authored by a human who is vouching for its efficacy and understands it before merging it. This is a tool to help rubber-duck, clear roadblocks and aid executive function by facilitating a bias to action. This is not a tool for [inactive gods](https://en.wikipedia.org/wiki/Deus_otiosus) wishing to set a course and walk away. Thus, the output should always be efficient, maintainable, simple code authored for other humans, and the prompts should be optimized for both token efficiency and concise, correct results without agents wasting turns doing the wrong thing.
-
-## Plans
-
-I should probably put these in Github issues.
-
-Goals are **not** about making agents DO MORE, more about ensuring agents are ethical, economical and secure.
-
-- an extension to integrate with [ACE](https://github.com/kayba-ai/agentic-context-engine) so that agents can perform self-learning while they work
-- experimentation with agent memory tools like [Beads](https://github.com/steveyegge/beads)
-- better agent search tooling with [qmd](https://github.com/tobi/qmd), [frankensearch](https://github.com/Dicklesworthstone/frankensearch), Elasticsearch, etc
-- use [LLM Compressor](https://github.com/vllm-project/llm-compressor) to improve the speed and energy usage of local inference
-- use [tokenshrink](https://github.com/chatde/tokenshrink) to reduce token usage, also to improve speed and energy usage
-- experimentation with [nono](https://docs.nono.sh) for zero-trust: more security, an audit chain of provenance, atomic rollback, etc.
-- use [jjq](https://pauladamsmith.com/blog/2026/02/introducing--local-merge-queue-for--local-merge-queue-for-) to makntain a local merge queue powered by Jujutsu, which Inalready use as a Git substitute CLI
-- use [gskill](https://gepa-ai.github.io/gepa/blog/2026/02/18/automatically-learning-skills-for-coding-agents/)
-and optimize_anything for prompt and skill optimization
-- build workflows and pipelines with [omp-swarm](https://github.com/can1357/oh-my-pi/tree/main/packages/swarm-extension)
-- track task token usage efficiency with [omp stats](https://github.com/can1357/oh-my-pi/tree/main/packages/stats) to establish the most efficient strategies
+Avoid maximalism and accelerationism vibes. All code output is authored by a human (me!) who is vouching for its efficacy and understands it before merging it. This is a tool to help developers rubber-duck, clear roadblocks and aid executive function deficiencies by facilitating a bias to action. This is not to enable [inactive gods](https://en.wikipedia.org/wiki/Deus_otiosus) wishing to set a course and walk away. Thus, the output will always be efficient, maintainable, simple code authored for and by humans. Prompting should be optimized for both token efficiency and concise, correct results without agents wasting turns doing the wrong thing.
