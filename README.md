@@ -19,4 +19,15 @@ Tools and experiments will ideally build on the use of containers or other tools
 
 ### Do less, better
 
-Avoid maximalism and accelerationism vibes. All code output is authored by a human (me!) who is vouching for its efficacy and understands it before merging it. This is a tool to help developers rubber-duck, clear roadblocks and aid executive function deficiencies by facilitating a bias to action. This is not to enable [inactive gods](https://en.wikipedia.org/wiki/Deus_otiosus) wishing to set a course and walk away. Thus, the output will always be efficient, maintainable, simple code authored for and by humans. Prompting should be optimized for both token efficiency and concise, correct results without agents wasting turns doing the wrong thing.
+Avoid maximalism and accelerationism vibes. All code output is authored by a human&mdash;assisted by an agent, but with thorough review and revision&mdash;who understands, dog-foods and ultimately vouches for all code before publishing it for others. These are tools to help developers craft a coding agent experience to help them, not replace them. It is **not** intended to enable [inactive gods](https://en.wikipedia.org/wiki/Deus_otiosus) wishing to set a course and walk away.
+
+Doing less also means:
+
+- optimizing prompts for token efficiency
+- limiting what agents can see and do to avoid context bloat and incorrect choices
+
+Doing better also means:
+
+- navigating code lexically: why grep when you can query a syntax tree?
+- optimizing prompts for accuracy, preventing agents from doing the wrong thing
+- measure performance where possible to find bottlenecks
